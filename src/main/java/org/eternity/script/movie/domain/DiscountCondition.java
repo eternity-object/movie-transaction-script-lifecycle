@@ -10,8 +10,8 @@ import java.time.LocalTime;
 
 @Entity
 @SequenceGenerator(
-        name = "discount_seq",
-        sequenceName = "discount_seq",
+        name = "discount_condition_seq",
+        sequenceName = "discount_condition_seq",
         initialValue = 1, allocationSize = 50
 )
 @NoArgsConstructor(access = AccessLevel.PROTECTED) @AllArgsConstructor
@@ -20,7 +20,7 @@ public class DiscountCondition {
     public enum ConditionType { PERIOD_CONDITION, SEQUENCE_CONDITION }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "discount_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "discount_condition_seq")
     private Long id;
     private Long policyId;
     private ConditionType conditionType;
